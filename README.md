@@ -120,7 +120,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
     <li><code>Enum</code> TipoTamanho</li>
     <ul>
         <li>Valores: P, M, e G</li>
-        <li>Implementar fato de multiplicação do tamanho dos shakes (regra 2) no Enum</li>
+        <li>Implementar regra do fator de multiplicação do tamanho dos shakes (regra 2) no Enum</li>
     </ul>
     <li><code>Class</code> Shake</li>
     <ul>
