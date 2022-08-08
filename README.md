@@ -1,9 +1,12 @@
 # ToTal Shakes
 
 ```
-Guilherme Castilho Casassanta @gcastilho
-Vitor Rangel Carneiro da Silva @vitorrangel
-Andreus Daltro de Oliveira Brazil @andreus
+Arnald da Costa Queiroga @arnald
+André Luiz Vieira Mostaro @amostaro
+Elvis William De Oliveira Barbieri @ebarbieri
+Eric de Sousa Andrade @ericsousa
+Jezielle de Fátima Farias da Cunha @jezielle
+Rebeca Baptista Fonseca Viana @rebecav
 
 
 Foi solicitado que fosse criado um sistema para uma Loja de Shakes, e você como desenvolvedor 
