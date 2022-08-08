@@ -301,3 +301,14 @@ Sempre consultando a estrutura e as regras de negócio que foram passadas aqui e
 a saída do Program esperada.
 ```
 
+<h3>Desafio Extra</h3>
+
+```
+O seu objetivo agora é fazer uma Interface
+Utilizando uma classe chamada Main
+Você deve criar uma interface onde o usuario irá fazer o pedido
+Armazenando em variaveis todos os dados do pedido 
+Você ira salvar esses pedidos em um arquivo
+Lembrando algumas classes irão precisar Implementar o Serializable
+```
+
