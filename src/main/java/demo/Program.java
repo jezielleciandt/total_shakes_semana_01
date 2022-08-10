@@ -18,7 +18,7 @@ import java.util.List;
 
 public class Program {
     public static void main(String[] args) {
-        //Monta o cardapio com base nos enumns disponíveis
+
         Cliente cliente = new Cliente(1,"Pedro","pedro@email.com");
         Cardapio cardapio = new Cardapio();
 
@@ -36,7 +36,6 @@ public class Program {
         cardapio.adicionarIngrediente(mel,1.0);
         cardapio.adicionarIngrediente(aveia, 3.0);
 
-        //Constrói o shake , coloca no pedido e manda o cardápio calcular o preço com base no pedido
         Shake shake1 = new Shake(sorvete,banana,mel, TipoTamanho.P);
 
         ItemPedido itemPedido1 = new ItemPedido(shake1,1);
@@ -49,7 +48,6 @@ public class Program {
         System.out.println(pedido1);
         System.out.println(pedido1.calcularTotal(cardapio));
 
-        //Constrói o shake , coloca no pedido e manda o cardápio calcular o preço com base no pedido
         System.out.println("::::: Criando um Shake Básico 1:1:1:1");
         Shake shake2 = new Shake(sorvete, banana, mel, new ArrayList<>(List.of(aveia)), TipoTamanho.G);
         ItemPedido itemPedido2 = new ItemPedido(shake2, 1);

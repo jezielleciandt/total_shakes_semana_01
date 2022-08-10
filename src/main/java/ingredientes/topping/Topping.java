@@ -20,10 +20,9 @@ public class Topping implements Adicional,Comparable<Ingrediente> {
         return this.tipoTopping;
     }
 
-    //É necessário consertar o compareTo, para imprimir na ordem correta.
     @Override
     public int compareTo(Ingrediente ingrediente) {
-        return ingrediente.obterTipo().toString().compareTo(this.obterTipo().toString());
+        return this.obterTipo().toString().compareTo(ingrediente.obterTipo().toString());
     }
 
     @Override

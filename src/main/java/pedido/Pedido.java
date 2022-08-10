@@ -1,13 +1,7 @@
 package pedido;
 
-import ingredientes.Adicional;
-import ingredientes.Ingrediente;
-import produto.Shake;
-
 import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
+
 
 public class Pedido {
 
@@ -31,11 +25,11 @@ public class Pedido {
 
             var precoBase = cardapio.getPrecos().get(shake.getBase());
             var precoBaseComTamanho = precoBase + (precoBase * shake.getTipoTamanho().multiplicador);
-            var precoComQuantidade = precoBaseComTamanho * qtdShake;
+            var precoComQuantidade = precoBaseComTamanho;
             var totalAdicionais = adicionais.stream().map(adicional -> cardapio.getPrecos().get(adicional))
                     .reduce(Double::sum).orElse(0.0);
 
-            total += precoComQuantidade + totalAdicionais;
+            total += (precoComQuantidade + totalAdicionais) *  qtdShake;
         }
 
         return total;
