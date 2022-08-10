@@ -5,18 +5,15 @@ import ingredientes.Ingrediente;
 import java.util.TreeMap;
 
 public class Cardapio {
-    private TreeMap<Ingrediente,Double> precos;
+
+    private final TreeMap<Ingrediente,Double> precos;
 
     public Cardapio(){
         this.precos= new TreeMap<>();
     }
 
-    public TreeMap<Ingrediente, Double> getPrecos(){
-        return this.precos;
-    }
-
     public void adicionarIngrediente(Ingrediente ingrediente,Double preco){
-        //TODO
+        precos.put(ingrediente, preco);
     }
 
     public boolean atualizarIngrediente(Ingrediente ingrediente,Double preco){
@@ -37,6 +34,10 @@ public class Cardapio {
     @Override
     public String toString() {
         return this.precos.toString();
+    }
+
+    public TreeMap<Ingrediente, Double> getPrecos(){
+        return this.precos;
     }
 
 }

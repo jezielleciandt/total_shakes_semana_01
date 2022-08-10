@@ -3,9 +3,10 @@ package pedido;
 import java.io.*;
 
 public class Cliente implements Serializable {
-    private int id;
-    private String nome;
-    private String email;
+
+    private final int id;
+    private final String nome;
+    private final String email;
 
     public Cliente(int id, String nome, String email) {
         this.id = id;
