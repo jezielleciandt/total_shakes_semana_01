@@ -41,9 +41,8 @@ public class Pedido implements Serializable {
 
     public void adicionarItemPedido(ItemPedido itemPedidoAdicionado){
 
-        if(itens.stream().anyMatch(
-                        itemPedido -> itemPedido.getShake().equals(itemPedidoAdicionado.getShake()))
-        ){
+        if(itens.contains(itemPedidoAdicionado)){
+
             ItemPedido pedidoExistente = itens.stream()
                     .filter(itemPedido -> itemPedido.getShake().equals(itemPedidoAdicionado.getShake()))
                     .findAny()
@@ -52,8 +51,6 @@ public class Pedido implements Serializable {
             int quantidadeAtualizada = itemPedidoAdicionado.getQuantidade() + pedidoExistente.getQuantidade();
             pedidoExistente.setQuantidade(quantidadeAtualizada);
 
-            this.itens.remove(itemPedidoAdicionado);
-            this.itens.add(pedidoExistente);
         }else{
             this.itens.add(itemPedidoAdicionado);
         }

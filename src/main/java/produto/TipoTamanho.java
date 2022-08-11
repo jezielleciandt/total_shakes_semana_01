@@ -1,6 +1,6 @@
 package produto;
 
-public enum TipoTamanho {
+public enum TipoTamanho  {
 
     P(0.0),
     M(0.30),
@@ -11,4 +11,5 @@ public enum TipoTamanho {
     TipoTamanho(double multiplicador) {
         this.multiplicador = multiplicador;
     }
+
 }

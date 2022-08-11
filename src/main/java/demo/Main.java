@@ -53,5 +53,9 @@ public class Main {
 
         System.out.println(pedidoDesserializado);
         System.out.println(pedidoDesserializado.equals(pedido1));
+
+        for(TipoTamanho tipo : TipoTamanho.values()){
+            System.out.println(tipo);
+        }
     }
 }
