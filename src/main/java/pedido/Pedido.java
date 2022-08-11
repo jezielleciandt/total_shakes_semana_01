@@ -72,9 +72,6 @@ public class Pedido implements Serializable {
                 return true;
             }
 
-            this.itens.remove(itemPedidoRemovido);
-            this.itens.add(pedidoAtualizado);
-
         } else {
             throw new IllegalArgumentException("Item nao existe no pedido.");
         }
