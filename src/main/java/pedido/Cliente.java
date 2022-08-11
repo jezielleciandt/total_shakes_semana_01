@@ -2,7 +2,9 @@ package pedido;
 
 import java.io.*;
 
-public class Cliente implements Serializable {
+public class Cliente implements Serializable, FazPedido {
+
+    private static final long serialVersionUID = 1L;
 
     private final int id;
     private final String nome;
@@ -61,6 +63,54 @@ public class Cliente implements Serializable {
     }
 
     @Override
+    public void serializarPedido(Pedido pedido) {
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+
+        try{
+            fos = new FileOutputStream("Pedido-" + pedido.getId()+ ".txt");
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(pedido);
+        }catch(Exception e){
+            System.out.println("Nao foi possivel serializar");
+        }finally{
+            if(oos != null){
+                try{
+                    oos.close();
+                }catch(IOException e){
+                    System.out.println("Nao foi possivel fechar o arquivo");
+                }
+            }
+        }
+    }
+
+    @Override
+    public  Pedido desserializarPedido(int id){
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try{
+            fis = new FileInputStream("Pedido-" + id + ".txt");
+            ois = new ObjectInputStream(fis);
+
+            @SuppressWarnings("unchecked") Pedido pedido = (Pedido) ois.readObject();
+
+            return pedido;
+        }catch(Exception e){
+            System.out.println("Nao foi possivel desserializar");
+            return null;
+        }finally{
+            if(ois != null){
+                try{
+                    ois.close();
+                }catch(IOException e){
+                    System.out.println("Nao foi possivel fechar o arquivo");
+                }
+            }
+        }
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Cliente)) return false;
@@ -84,4 +134,6 @@ public class Cliente implements Serializable {
     public String toString() {
         return this.id + " - " + this.nome + " - " + this.email;
     }
+
+
 }

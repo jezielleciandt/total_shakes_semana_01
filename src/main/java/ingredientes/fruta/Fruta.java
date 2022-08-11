@@ -5,14 +5,12 @@ import ingredientes.Ingrediente;
 
 public class Fruta  implements Adicional,Comparable<Ingrediente>{
 
+     private static final long serialVersionUID = 1L;
+
      private final TipoFruta tipoFruta;
 
      public Fruta(TipoFruta tipoFruta) {
           this.tipoFruta = tipoFruta;
-     }
-
-     public TipoFruta getTipoFruta(){
-          return this.tipoFruta;
      }
 
      @Override

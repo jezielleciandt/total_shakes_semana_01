@@ -1,5 +1,7 @@
 package ingredientes;
 
-public interface Ingrediente {
+import java.io.Serializable;
+
+public interface Ingrediente extends Serializable {
     Enum<?> obterTipo();
 }

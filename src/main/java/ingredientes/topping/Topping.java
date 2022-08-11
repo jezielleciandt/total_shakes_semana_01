@@ -5,14 +5,12 @@ import ingredientes.Ingrediente;
 
 public class Topping implements Adicional,Comparable<Ingrediente> {
 
+    private static final long serialVersionUID = 1L;
+
     private final TipoTopping tipoTopping;
 
     public Topping(TipoTopping tipoTopping) {
         this.tipoTopping = tipoTopping;
-    }
-
-    public TipoTopping getTipoTopping(){
-        return this.tipoTopping;
     }
 
     @Override

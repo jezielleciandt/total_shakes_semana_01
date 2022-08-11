@@ -5,9 +5,10 @@ import ingredientes.base.Base;
 import ingredientes.fruta.Fruta;
 import ingredientes.topping.Topping;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Shake {
+public class Shake implements Serializable {
 
     private final Base base;
     private final Fruta fruta;
@@ -73,6 +74,9 @@ public class Shake {
 
     @Override
     public String toString() {
-        return this.base.getTipoBase().toString() + " / " + this.fruta.getTipoFruta().toString() + " / " + this.topping.getTipoTopping().toString() + " / " + this.adicionais + " / " + this.tipoTamanho.toString();
+        return this.base.obterTipo().toString() + " / "
+                + this.fruta.obterTipo().toString()
+                + " / " + this.topping.obterTipo().toString()
+                + " / " + this.adicionais + " / " + this.tipoTamanho.toString();
     }
 }

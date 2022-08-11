@@ -2,9 +2,13 @@ package pedido;
 
 import produto.Shake;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class ItemPedido {
+public class ItemPedido implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private final Shake shake;
     private int quantidade;
 

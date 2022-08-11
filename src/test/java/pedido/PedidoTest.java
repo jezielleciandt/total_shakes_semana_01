@@ -66,8 +66,8 @@ public class PedidoTest{
             assertEquals(new Fruta(TipoFruta.MORANGO), item.getShake().getFruta());
             assertEquals(new Topping(TipoTopping.MEL), item.getShake().getTopping());
             assertEquals(2, item.getShake().getAdicionais().size());
-            assertEquals(new Topping(TipoTopping.AVEIA), item.getShake().getAdicionais().get(1));
-            assertEquals(new Fruta(TipoFruta.BANANA), item.getShake().getAdicionais().get(0));
+            assertEquals(new Topping(TipoTopping.AVEIA), item.getShake().getAdicionais().get(0));
+            assertEquals(new Fruta(TipoFruta.BANANA), item.getShake().getAdicionais().get(1));
             assertEquals(TipoTamanho.P, item.getShake().getTipoTamanho());
             assertEquals(1, item.getQuantidade());
         });
@@ -244,7 +244,7 @@ public class PedidoTest{
         pedido.adicionarItemPedido(itemPedido1);
         pedido.adicionarItemPedido(itemPedido2);
 
-        assertEquals(129, pedido.calcularTotal(cardapio));
+        assertEquals(229, pedido.calcularTotal(cardapio));
     }
 
     @Test
