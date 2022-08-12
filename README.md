@@ -13,7 +13,7 @@ Foi solicitado que fosse criado um sistema para uma Loja de Shakes, e você como
 recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes especificações.
 ```
 
-<h3>Dentro do package de Ingrediente temos a seguinte estrutura</h3>
+<h3>Dentro do package de Ingrediente temos a seguinte estrutura</h3> <code><b>OK<b></code>
 <ul>
     <li><code>Interface</code> Ingrediente <code><b>OK<b></code></li>
     <ul>
@@ -115,14 +115,14 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
     </ul>
 </ul>
 
-<h3>Dentro do package de Produto temos a seguinte estrutura</h3>
+<h3>Dentro do package de Produto temos a seguinte estrutura</h3> <code><b>OK<b></code>
 <ul>
-    <li><code>Enum</code> TipoTamanho</li>
+    <li><code>Enum</code> TipoTamanho <code><b>OK<b></code></li>
     <ul>
         <li>Valores: P, M, e G</li>
         <li>Implementar regra do fator de multiplicação do tamanho dos shakes (regra 2) no Enum</li>
     </ul>
-    <li><code>Class</code> Shake</li>
+    <li><code>Class</code> Shake <code><b>OK<b></code></li>
     <ul>
         <li>Atributo(s):</li>
     <ul>
@@ -148,7 +148,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
 
 <h3>Dentro do package de Pedido temos a seguinte estrutura</h3>
 <ul>
-    <li><code>Class</code> Cardapio</li>
+    <li><code>Class</code> Cardapio <code><b>OK<b></code></li>
         <ul>
            <li>Atributo(s):</li>
         <ul>
@@ -164,7 +164,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
          <li><code>public</code> String toString()</li>
    </ul>
    </ul>
-    <li><code>Class</code> Cliente</li>
+    <li><code>Class</code> Cliente <code><b>OK<b></code></li>
          <ul>
            <li>Atributo(s):</li>
          <ul>
