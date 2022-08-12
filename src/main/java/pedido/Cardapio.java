@@ -16,12 +16,12 @@ public class Cardapio {
     }
 
     public void adicionarIngrediente(Ingrediente ingrediente,Double preco){
-        if(preco<=0) throw new IllegalArgumentException("Preco invalido.");
+        validarPrecoPositivo(preco);
         precos.put(ingrediente, preco);
     }
 
     public boolean atualizarIngrediente(Ingrediente ingrediente,Double preco){
-        if(preco<=0) throw new IllegalArgumentException("Preco invalido.");
+        validarPrecoPositivo(preco);
         if(!precos.containsKey(ingrediente)) throw new IllegalArgumentException("Ingrediente nao existe no cardapio.");
         if(precos.replace(ingrediente, preco)!=null) return true;
         else throw new RuntimeException("Erro ao atualizar ingrediente.");
@@ -43,4 +43,7 @@ public class Cardapio {
         return this.precos.toString();
     }
 
+    public void validarPrecoPositivo(Double preco){
+        if(preco<=0) throw new IllegalArgumentException("Preco invalido.");
+    }
 }
