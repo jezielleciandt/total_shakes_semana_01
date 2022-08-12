@@ -1,8 +1,14 @@
 package pedido;
 
+import ingredientes.Adicional;
 import ingredientes.Ingrediente;
 
+import java.util.Collection;
+import java.util.Map;
 import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class Cardapio {
 
@@ -53,6 +59,17 @@ public class Cardapio {
 
     }
 
+    public TreeMap<Adicional, Double> getAdicionais() {
+         TreeMap<Adicional, Double> adicionais = new TreeMap<>();
+
+        this.precos.forEach((ingrediente, preco) -> {
+            if(ingrediente instanceof Adicional){
+                adicionais.put((Adicional) ingrediente, preco);
+            }
+        });
+        return adicionais;
+    }
+
     @Override
     public String toString() {
         return this.precos.toString();
@@ -61,5 +78,4 @@ public class Cardapio {
     public TreeMap<Ingrediente, Double> getPrecos(){
         return this.precos;
     }
-
 }

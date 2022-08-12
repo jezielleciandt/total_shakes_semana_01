@@ -15,6 +15,7 @@ import produto.TipoTamanho;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class Program {
     public static void main(String[] args) {
@@ -93,6 +94,7 @@ public class Program {
         Cliente cliente2 = Cliente.desserializarCliente(1);
         System.out.println(cliente2);
         System.out.println(cliente.equals(cliente2));
+
 
     }
 }
