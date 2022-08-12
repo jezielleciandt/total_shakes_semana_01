@@ -13,35 +13,35 @@ Foi solicitado que fosse criado um sistema para uma Loja de Shakes, e você como
 recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes especificações.
 ```
 
-<h3>Dentro do package de Ingrediente temos a seguinte estrutura</h3>
+<h3>Dentro do package de Ingrediente temos a seguinte estrutura</h3> <code><b>OK<b></code>
 <ul>
-    <li><code>Interface</code> Ingrediente</li>
+    <li><code>Interface</code> Ingrediente <code><b>OK<b></code></li>
     <ul>
         <li>Método(s):</li>
         <ul>
             <li>Enum obterTipo();</li>
         </ul>
     </ul>
-    <li><code>Interface</code> Adicional</li>
+    <li><code>Interface</code> Adicional <code><b>OK<b></code></li>
         <ul>
             <li>Extends:</li>
             <ul>
                 <li>Ingrediente</li>
             </ul>
         </ul>
-    <li><code>Enum</code> TipoBase</li>
+    <li><code>Enum</code> TipoBase <code><b>OK<b></code></li>
     <ul>
         <li>Valores: Iorgurte, Sorvete e Leite.</li>
     </ul>
-    <li><code>Enum</code> TipoTopping</li>
+    <li><code>Enum</code> TipoTopping <code><b>OK<b></code></li>
     <ul>
         <li>Valores: Aveia, Mel e Chocolate.</li>
     </ul>
-    <li><code>Enum</code> TipoFruta</li>
+    <li><code>Enum</code> TipoFruta <code><b>OK<b></code></li>
     <ul>
         <li>Valores: Morango, Banana e Abacate.</li>
     </ul>
-    <li><code>Class</code> Base</li>
+    <li><code>Class</code> Base <code><b>OK<b></code></li>
     <ul>
         <li>Implements:</li>
         <ul>
@@ -65,7 +65,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
             <li><code>public</code> String toString()</li>
         </ul>
         </ul>
-    <li><code>Class</code> Topping</li>
+    <li><code>Class</code> Topping <code><b>OK<b></code></li>
     <ul>
         <li>Implements:</li>
         <ul>
@@ -89,7 +89,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
             <li><code>public</code> String toString()</li>
         </ul>
     </ul>
-    <li><code>Class</code> Fruta</li>
+    <li><code>Class</code> Fruta <code><b>OK<b></code></li>
     <ul>
         <li>Implements:</li>
         <ul>
@@ -115,14 +115,14 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
     </ul>
 </ul>
 
-<h3>Dentro do package de Produto temos a seguinte estrutura</h3>
+<h3>Dentro do package de Produto temos a seguinte estrutura</h3> <code><b>OK<b></code>
 <ul>
-    <li><code>Enum</code> TipoTamanho</li>
+    <li><code>Enum</code> TipoTamanho <code><b>OK<b></code></li>
     <ul>
         <li>Valores: P, M, e G</li>
         <li>Implementar regra do fator de multiplicação do tamanho dos shakes (regra 2) no Enum</li>
     </ul>
-    <li><code>Class</code> Shake</li>
+    <li><code>Class</code> Shake <code><b>OK<b></code></li>
     <ul>
         <li>Atributo(s):</li>
     <ul>
@@ -148,7 +148,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
 
 <h3>Dentro do package de Pedido temos a seguinte estrutura</h3>
 <ul>
-    <li><code>Class</code> Cardapio</li>
+    <li><code>Class</code> Cardapio <code><b>OK<b></code></li>
         <ul>
            <li>Atributo(s):</li>
         <ul>
@@ -164,7 +164,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
          <li><code>public</code> String toString()</li>
    </ul>
    </ul>
-    <li><code>Class</code> Cliente</li>
+    <li><code>Class</code> Cliente <code><b>OK<b></code></li>
          <ul>
            <li>Atributo(s):</li>
          <ul>
@@ -182,7 +182,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
             <li><code>public</code> String toString()</li>
          </ul>
          </ul>
-    <li><code>Class</code> ItemPedido</li>
+    <li><code>Class</code> ItemPedido <code><b>OK<b></code></li>
           <ul>
            <li>Atributo(s):</li>
           <ul>
@@ -198,7 +198,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
             <li><code>public</code> String toString()</li>
          </ul>
          </ul>
-    <li><code>Class</code> Pedido</li>
+    <li><code>Class</code> Pedido <code><b>OK<b></code></li>
        <ul>
            <li>Atributo(s):</li>
           <ul>
@@ -222,7 +222,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
 
 <h3>Dentro do package de Demo temos a seguinte estrutura</h3>
 <ul>
-    <li><code>Class</code> Program</li>
+    <li><code>Class</code> Program <code><b>OK<b></code></li>
     <ul>
         <li>Método(s):</li>
         <ul>
@@ -265,13 +265,13 @@ Process finished with exit code 0
 
 ```
 
-<h3>Regras de negócio</h3>
+<h3>Regras de negócio <code><b>OK<b></code></h3>
 <ul>
     <li><code>Shake</code>:</li>
     <ul>
         <li>Regra 1: um <code>Shake</code> é composto obrigatoriamente de uma <code>Base</code>, uma <code>Fruta</code>, um <code>Topping</code>, um <code>TipoTamanho</code> e opcionalmente por uma <code>List&lt;Adicional&gt;</code></li>
     </ul>
-    <li><code>Pedido</code>:</li>
+    <li><code>Pedido <code><b>OK<b></code></code>:</li>
     <ul>
         <li>Regra 1: Quando adicionar um novo <code>ItemPedido</code> em um <code>Pedido</code> que já contenha um outro <code>ItemPedido</code> com o mesmo <code>Shake</code> nos dois <code>ItemPedido</code>, então o <code>Pedido</code> deve conter apenas um <code>ItemPedido</code> daquele <code>Shake</code>, porém com a <code>quantidade</code> atualizada do <code>Shake</code></li>
         <li>Regra 2: O preço de um <code>Shake</code> é calculado com o valor da <code>Base</code> de acordo com o <code>TipoTamanho</code>, somado com o custo dos <code>adicionais</code></li>
@@ -284,7 +284,7 @@ Process finished with exit code 0
         <li>Regra 4: A função <code>boolean removeItemPedido(ItemPedido itemPedidoRemovido)</code> deve lançar uma exceção do tipo <code>IllegalArgumentException</code> com a mensagem <code>Item nao existe no pedido.</code> caso o <code>ItemPedido</code> a ser removido não exista no <code>Pedido</code></li>
         <li>Regra 5: A função <code>boolean removeItemPedido(ItemPedido itemPedidoRemovido)</code> irá sempre reduzir apenas UMA unidade do <code>ItemPedido</code>, independente da <code>quantidade</code> que foi informada no parâmetro da função.</li>
     </ul>
-    <li><code>Cardapio</code>:</li>
+    <li><code>Cardapio <code><b>OK<b></code></code>:</li>
     <ul>
         <li>Regra 1: O preco de um <code>Ingrediente</code> deve ser <code>maior que zero</code>, caso contrário irá disparar uma exceção do tipo <code>IllegalArgumentException</code> com a mensagem <code>Preco invalido.</code></li>
         <li>Regra 2: Os métodos <code>boolean atualizarIngrediente(Ingrediente ingrediente,Double preco)</code>, <code>boolean removerIngrediente(Ingrediente ingrediente)</code> e <code>Double buscarPreco(Ingrediente ingrediente)</code> devem disparar uma exceção do tipo <code>IllegalArgumentException</code> com a mensagem <code>Ingrediente nao existe no cardapio.</code> caso o <code>Ingrediente</code> passado como parâmetro não exista no cardápio.</li>
@@ -292,7 +292,7 @@ Process finished with exit code 0
     </ul>
 </ul>
 
-<h3>Desafio</h3>
+<h3>Desafio <code><b>OK<b></code></h3>
 
 ```
 O seu objetivo é fazer o código funcionar. 
@@ -312,4 +312,3 @@ Armazenando em variaveis todos os dados do pedido
 Você ira salvar esses pedidos em um arquivo
 Lembrando algumas classes irão precisar Implementar o Serializable
 ```
-

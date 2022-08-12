@@ -43,7 +43,7 @@ public class Program {
         System.out.println(pedido1.calcularTotal(cardapio));
 
         System.out.println("::::: Criando um Shake Básico 1:1:1:1");
-        Shake shake2 = new Shake(sorvete, banana, mel, new ArrayList<>(List.of(aveia)), TipoTamanho.G);
+        Shake shake2 = new Shake(sorvete, banana, mel, TipoTamanho.G, new ArrayList<>(List.of(aveia)));
         ItemPedido itemPedido2 = new ItemPedido(shake2, 1);
         Pedido pedido2 = new Pedido(2, new ArrayList<>(List.of(itemPedido2)), cliente);
 
@@ -70,13 +70,13 @@ public class Program {
         System.out.println(pedido2);
 
         System.out.println("::::: Item pedido com dois adicionais");
-        Shake shake3 = new Shake(iogurte, morango, mel, new ArrayList<>(List.of(morango, banana)), TipoTamanho.P);
+        Shake shake3 = new Shake(iogurte, morango, mel, TipoTamanho.P, new ArrayList<>(List.of(morango, banana)));
         ItemPedido itemPedido3 = new ItemPedido(shake3, 1);
         Pedido pedido3 = new Pedido(3, new ArrayList<>(List.of(itemPedido3)), cliente);
         System.out.println(pedido3);
         System.out.println(pedido3.calcularTotal(cardapio));
 
-        Shake shake4 = new Shake(iogurte, morango, mel, new ArrayList<>(List.of(banana, morango)), TipoTamanho.P);
+        Shake shake4 = new Shake(iogurte, morango, mel, TipoTamanho.P, new ArrayList<>(List.of(banana, morango)));
         ItemPedido itemPedido4 = new ItemPedido(shake4, 2);
         pedido3.adicionarItemPedido(itemPedido4);
         System.out.println(pedido3);
