@@ -15,33 +15,33 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
 
 <h3>Dentro do package de Ingrediente temos a seguinte estrutura</h3>
 <ul>
-    <li><code>Interface</code> Ingrediente</li>
+    <li><code>Interface</code> Ingrediente <code><b>OK<b></code></li>
     <ul>
         <li>Método(s):</li>
         <ul>
             <li>Enum obterTipo();</li>
         </ul>
     </ul>
-    <li><code>Interface</code> Adicional</li>
+    <li><code>Interface</code> Adicional <code><b>OK<b></code></li>
         <ul>
             <li>Extends:</li>
             <ul>
                 <li>Ingrediente</li>
             </ul>
         </ul>
-    <li><code>Enum</code> TipoBase</li>
+    <li><code>Enum</code> TipoBase <code><b>OK<b></code></li>
     <ul>
         <li>Valores: Iorgurte, Sorvete e Leite.</li>
     </ul>
-    <li><code>Enum</code> TipoTopping</li>
+    <li><code>Enum</code> TipoTopping <code><b>OK<b></code></li>
     <ul>
         <li>Valores: Aveia, Mel e Chocolate.</li>
     </ul>
-    <li><code>Enum</code> TipoFruta</li>
+    <li><code>Enum</code> TipoFruta <code><b>OK<b></code></li>
     <ul>
         <li>Valores: Morango, Banana e Abacate.</li>
     </ul>
-    <li><code>Class</code> Base</li>
+    <li><code>Class</code> Base <code><b>OK<b></code></li>
     <ul>
         <li>Implements:</li>
         <ul>
@@ -65,7 +65,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
             <li><code>public</code> String toString()</li>
         </ul>
         </ul>
-    <li><code>Class</code> Topping</li>
+    <li><code>Class</code> Topping <code><b>OK<b></code></li>
     <ul>
         <li>Implements:</li>
         <ul>
@@ -89,7 +89,7 @@ recebeu a tarefa de implementá-lo. E para isso você deve seguir as seguintes e
             <li><code>public</code> String toString()</li>
         </ul>
     </ul>
-    <li><code>Class</code> Fruta</li>
+    <li><code>Class</code> Fruta <code><b>OK<b></code></li>
     <ul>
         <li>Implements:</li>
         <ul>
@@ -312,4 +312,3 @@ Armazenando em variaveis todos os dados do pedido
 Você ira salvar esses pedidos em um arquivo
 Lembrando algumas classes irão precisar Implementar o Serializable
 ```
-
