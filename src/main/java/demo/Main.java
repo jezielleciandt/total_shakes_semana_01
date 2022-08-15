@@ -73,7 +73,7 @@ public class Main {
         System.out.println("Total do pedido: ");
 
     }
-    
+
     private static List<Adicional> montarAdicionais(int opcaoAdicionais) {
         List<Adicional> adicionais = new ArrayList<>();
 

@@ -2,7 +2,7 @@ package pedido;
 
 import java.io.*;
 
-public class Cliente implements Serializable, FazPedido {
+public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -40,7 +40,7 @@ public class Cliente implements Serializable, FazPedido {
             return null;
         }
     }
-
+/*
     @Override
     public void serializarPedido(Pedido pedido) {
         try(var outputStream = new ObjectOutputStream(new FileOutputStream("Pedido-" + pedido.getId() + ".txt"))){
@@ -67,7 +67,7 @@ public class Cliente implements Serializable, FazPedido {
             return null;
         }
     }
-
+*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
