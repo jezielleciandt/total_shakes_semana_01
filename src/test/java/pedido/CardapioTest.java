@@ -1,6 +1,7 @@
 package pedido;
 
-import ingredientes.*;
+import br.com.TDD.ingredientes.*;
+import br.com.TDD.pedido.Cardapio;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;

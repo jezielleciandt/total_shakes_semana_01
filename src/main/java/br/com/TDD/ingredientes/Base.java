@@ -1,4 +1,4 @@
-package ingredientes;
+package br.com.TDD.ingredientes;
 
 public class Base implements Ingrediente,Comparable<Ingrediente>{
 

@@ -1,6 +1,6 @@
-package pedido;
+package br.com.TDD.pedido;
 
-import produto.Shake;
+import br.com.TDD.produto.Shake;
 
 public class ItemPedido {
     private Shake shake;

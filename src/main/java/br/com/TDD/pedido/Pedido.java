@@ -1,4 +1,4 @@
-package pedido;
+package br.com.TDD.pedido;
 
 import java.util.ArrayList;
 
