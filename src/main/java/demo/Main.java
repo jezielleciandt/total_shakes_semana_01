@@ -47,15 +47,6 @@ public class Main {
         System.out.println(pedido1);
         System.out.println(pedido1.calcularTotal(cardapio));
 
-        System.out.println("::::: Serializando Cliente 1 e Desserializando Pedido 1");
-        cliente.serializarPedido(pedido1);
-        Pedido pedidoDesserializado = cliente.desserializarPedido(pedido1.getId());
 
-        System.out.println(pedidoDesserializado);
-        System.out.println(pedidoDesserializado.equals(pedido1));
-
-        for(TipoTamanho tipo : TipoTamanho.values()){
-            System.out.println(tipo);
-        }
     }
 }
