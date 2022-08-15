@@ -15,7 +15,7 @@ Para isso, você como desenvolvedor precisará desenvolver uma classe Armazem
 usando o TDD (Test-driven development) seguindo as seguintes especificações.
 ```
 <h3>Primeiro passo para a continuação do desafio</h3>
-No mesmo projeto que foi desenvolvido na semana 1, você irá criar uma nova branch (<code>git checkout -b “feature/week-2”</code>) e desenvolver a solução nela. Após finalizar o desafio, abrir um Pull Request no GitHub para o grupo fazer o Code Review.
+No mesmo projeto que foi desenvolvido na semana 1, você irá criar uma nova branch (<code>git checkout -b “feature/week-2”</code>) e desenvolver a solução nela. Após finalizar o desafio, abrir um Pull Request no GitHub (para a main do seu projeto) para que então o grupo possa fazer o Code Review.
 <br>
 
 <h3>Criar uma classe Armazém que irá armazenar os Ingredientes e a quantidade de Ingrediente</h3>
