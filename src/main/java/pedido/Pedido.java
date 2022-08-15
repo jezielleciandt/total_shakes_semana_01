@@ -3,6 +3,7 @@ package pedido;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Optional;
 
 
 public class Pedido implements Serializable {
@@ -28,9 +29,9 @@ public class Pedido implements Serializable {
             var adicionais = shake.getAdicionais();
 
             var precoBase = cardapio.getPrecos().get(shake.getBase());
-            var precoBaseComTamanho = precoBase + (precoBase * shake.getTipoTamanho().multiplicador);
-            var precoComQuantidade = precoBaseComTamanho;
-            var totalAdicionais = adicionais.stream().map(adicional -> cardapio.getPrecos().get(adicional))
+            var precoComQuantidade = precoBase + (precoBase * shake.getTipoTamanho().multiplicador);
+            var totalAdicionais = adicionais.stream()
+                    .map(adicional -> cardapio.getPrecos().get(adicional))
                     .reduce(Double::sum).orElse(0.0);
 
             total += (precoComQuantidade + totalAdicionais) *  qtdShake;
@@ -41,43 +42,40 @@ public class Pedido implements Serializable {
 
     public void adicionarItemPedido(ItemPedido itemPedidoAdicionado){
 
-        if(itens.contains(itemPedidoAdicionado)){
+        Optional<ItemPedido> optionalItemPedido = itens.stream()
+                .filter(itemPedido -> itemPedido.getShake().equals(itemPedidoAdicionado.getShake()))
+                .findAny();
 
-            ItemPedido pedidoExistente = itens.stream()
-                    .filter(itemPedido -> itemPedido.getShake().equals(itemPedidoAdicionado.getShake()))
-                    .findAny()
-                    .orElseThrow();
+        optionalItemPedido.ifPresentOrElse( itemPedido -> {
+            var itemPedidoAtualizado = new ItemPedido(itemPedido.getShake(), itemPedido.getQuantidade());
 
-            int quantidadeAtualizada = itemPedidoAdicionado.getQuantidade() + pedidoExistente.getQuantidade();
-            pedidoExistente.setQuantidade(quantidadeAtualizada);
+            int quantidadeAtualizada = itemPedido.getQuantidade() + itemPedidoAdicionado.getQuantidade();
+            itemPedidoAtualizado.setQuantidade(quantidadeAtualizada);
 
-        }else{
-            this.itens.add(itemPedidoAdicionado);
-        }
+            itens.remove(itemPedido);
+            itens.add(itemPedidoAtualizado);
+
+        },() -> itens.add(itemPedidoAdicionado));
     }
 
     public boolean removeItemPedido(ItemPedido itemPedidoRemovido) {
 
-        if (this.itens.contains(itemPedidoRemovido)) {
+        ItemPedido itemPedidoExistente = itens.stream()
+                .filter(itemPedido ->
+                        itemPedido.equals(itemPedidoRemovido))
+                .findAny().orElseThrow(() -> new IllegalArgumentException("Item nao existe no pedido."));
 
-            ItemPedido pedidoAtualizado = itens.stream()
-                    .filter(itemPedido -> itemPedido.equals(itemPedidoRemovido))
-                    .findAny()
-                    .orElseThrow();
+        var itemPedidoAtualizado = new ItemPedido(itemPedidoExistente.getShake(), itemPedidoExistente.getQuantidade());
+        itemPedidoAtualizado.setQuantidade(itemPedidoExistente.getQuantidade() - 1);
 
-            pedidoAtualizado.setQuantidade(pedidoAtualizado.getQuantidade() - 1);
-
-            if(pedidoAtualizado.getQuantidade() == 0){
-                this.itens.remove(itemPedidoRemovido);
-                return true;
-            }
-
-        } else {
-            throw new IllegalArgumentException("Item nao existe no pedido.");
+        if(itemPedidoAtualizado.getQuantidade() == 0){
+            return this.itens.remove(itemPedidoExistente);
         }
 
-        return true;
+        this.itens.remove(itemPedidoExistente);
+        return this.itens.add(itemPedidoAtualizado);
     }
+
 
     public ArrayList<ItemPedido> getItens() {
         return itens;

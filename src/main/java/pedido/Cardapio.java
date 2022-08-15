@@ -19,44 +19,52 @@ public class Cardapio {
     }
 
     public void adicionarIngrediente(Ingrediente ingrediente,Double preco){
-        if(preco <= 0){
-            throw new IllegalArgumentException("Preco invalido.");
-        }
+
+        if(preco <= 0) throw new IllegalArgumentException("Preco invalido.");
         precos.put(ingrediente, preco);
     }
 
     public boolean atualizarIngrediente(Ingrediente ingrediente,Double preco){
 
-        if(!precos.containsKey(ingrediente)){
-            throw new IllegalArgumentException("Ingrediente nao existe no cardapio.");
+        if(preco <= 0) throw new IllegalArgumentException("Preco invalido.");
 
-        }else if(preco <= 0){
-            throw new IllegalArgumentException("Preco invalido.");
-        }else{
-            precos.put(ingrediente, preco);
-            return true;
-        }
+        precos.entrySet().stream()
+                .filter(cardapio -> cardapio.getKey().obterTipo().equals(ingrediente.obterTipo()))
+                .findAny().orElseThrow(() -> new IllegalArgumentException("Ingrediente nao existe no cardapio."));
+
+        precos.put(ingrediente, preco);
+        return true;
+
     }
 
     public boolean removerIngrediente(Ingrediente ingrediente){
 
-        if(!precos.containsKey(ingrediente)){
-            throw new IllegalArgumentException("Ingrediente nao existe no cardapio.");
+        precos.entrySet().stream()
+                .filter(cardapio -> cardapio.getKey().obterTipo().equals(ingrediente.obterTipo()))
+                .findAny().orElseThrow(() -> new IllegalArgumentException("Ingrediente nao existe no cardapio."));
 
-        } else{
-            precos.remove(ingrediente);
-            return true;
-        }
+        precos.remove(ingrediente);
+        return true;
     }
 
     public Double buscarPreco(Ingrediente ingrediente){
-        if(!precos.containsKey(ingrediente)){
-            throw new IllegalArgumentException("Ingrediente nao existe no cardapio.");
 
-        } else{
-            return precos.get(ingrediente);
-        }
+        precos.entrySet().stream()
+                .filter(cardapio -> cardapio.getKey().obterTipo().equals(ingrediente.obterTipo()))
+                .findAny().orElseThrow(() -> new IllegalArgumentException("Ingrediente nao existe no cardapio."));
 
+        return precos.get(ingrediente);
+    }
+
+
+    public TreeMap<Ingrediente, Double> getPrecoAdicionais(){
+        return this.precos.entrySet().stream()
+                .filter(ingredientePreco -> ingredientePreco.getKey() instanceof Adicional)
+                .collect(
+                        TreeMap::new,
+                        (map, elemento) -> map.put(elemento.getKey(), elemento.getValue()),
+                        TreeMap::putAll
+                );
     }
 
     public TreeMap<Adicional, Double> getAdicionais() {

@@ -163,6 +163,7 @@ public class Main {
         return base;
     }
 
+<<<<<<< HEAD
     private static Topping montarTopping(int opcaoTopping) {
         Topping topping = selecionarTopping(opcaoTopping);
 
@@ -325,5 +326,8 @@ public class Main {
         cardapio.adicionarIngrediente(chocolate, 20.0);
 
         return cardapio;
+=======
+
+>>>>>>> totalshake/week1
     }
 }
