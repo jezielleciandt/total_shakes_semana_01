@@ -22,6 +22,7 @@ public class Main {
     static Scanner leitor = new Scanner(System.in);
     static Cardapio cardapio = instanciarCardapio();
 
+
     public static void main(String[] args) {
         Cliente cliente = new Cliente(1,"Pedro","pedro@email.com");
 
@@ -163,7 +164,6 @@ public class Main {
         return base;
     }
 
-<<<<<<< HEAD
     private static Topping montarTopping(int opcaoTopping) {
         Topping topping = selecionarTopping(opcaoTopping);
 
@@ -326,8 +326,6 @@ public class Main {
         cardapio.adicionarIngrediente(chocolate, 20.0);
 
         return cardapio;
-=======
 
->>>>>>> totalshake/week1
     }
 }

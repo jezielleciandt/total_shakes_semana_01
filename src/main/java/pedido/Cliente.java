@@ -41,14 +41,6 @@ public class Cliente implements Serializable {
         }
     }
 
-/*
-=======
-
-    /*
-<<<<<<< HEAD
-    }
-*/
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

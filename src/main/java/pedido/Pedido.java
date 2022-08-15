@@ -29,7 +29,7 @@ public class Pedido implements Serializable {
             var adicionais = shake.getAdicionais();
 
             var precoBase = cardapio.getPrecos().get(shake.getBase());
-            var precoComQuantidade = precoBase + (precoBase * shake.getTipoTamanho().multiplicador);
+            var precoComQuantidade = precoBase + (precoBase * shake.getTipoTamanho().getMultiplicador());
             var totalAdicionais = adicionais.stream()
                     .map(adicional -> cardapio.getPrecos().get(adicional))
                     .reduce(Double::sum).orElse(0.0);
