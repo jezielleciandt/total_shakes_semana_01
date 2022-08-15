@@ -1,21 +1,26 @@
-package ingredientes;
+package ingredientes.topping;
+
+import ingredientes.Adicional;
+import ingredientes.Ingrediente;
 
 public class Topping implements Adicional,Comparable<Ingrediente> {
-    private TipoTopping tipoTopping;
+
+    private static final long serialVersionUID = 1L;
+
+    private final TipoTopping tipoTopping;
 
     public Topping(TipoTopping tipoTopping) {
         this.tipoTopping = tipoTopping;
     }
 
-    public TipoTopping getTipoTopping(){
+    @Override
+    public TipoTopping obterTipo() {
         return this.tipoTopping;
     }
 
-
-    //É necessário consertar o compareTo, para imprimir na ordem correta.
     @Override
     public int compareTo(Ingrediente ingrediente) {
-        return ingrediente.obterTipo().toString().compareTo(this.obterTipo().toString());
+        return this.obterTipo().toString().compareTo(ingrediente.obterTipo().toString());
     }
 
     @Override
@@ -36,10 +41,5 @@ public class Topping implements Adicional,Comparable<Ingrediente> {
     @Override
     public String toString() {
         return this.tipoTopping.toString();
-    }
-
-    @Override
-    public Enum obterTipo() {
-        return this.tipoTopping;
     }
 }
