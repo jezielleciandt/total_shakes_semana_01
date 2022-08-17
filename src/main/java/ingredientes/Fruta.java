@@ -28,7 +28,6 @@ public class Fruta  implements Adicional,Comparable<Ingrediente>, Serializable {
 
           return tipoFruta == fruta.tipoFruta;
      }
-
      @Override
      public int hashCode() {
           return tipoFruta.hashCode();
@@ -43,5 +42,4 @@ public class Fruta  implements Adicional,Comparable<Ingrediente>, Serializable {
      public Enum obterTipo() {
           return this.tipoFruta;
      }
-
 }
