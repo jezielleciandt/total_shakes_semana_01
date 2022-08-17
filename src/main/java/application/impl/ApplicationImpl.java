@@ -7,7 +7,6 @@ import pedido.ItemPedido;
 import pedido.Pedido;
 import produto.Shake;
 import produto.TipoTamanho;
-
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -36,13 +35,13 @@ public class ApplicationImpl implements Application {
     }
 
     public Pedido addPedido(){
-        System.out.println("\nBem-vindo ao TOTAL SHAKE. Vamos começar a montar o seu pedido?\n");
+        System.out.println("\nBem-vindo ao TOTAL SHAKE. Vamos montar o seu pedido:\n");
         Cliente cliente = addCliente();
         Scanner scan = new Scanner(System.in);
         List<ItemPedido> itensPedidos = new ArrayList<>(10);
         do{
             itensPedidos.add(addItemPedido());
-            System.out.println("\n\nDeseja adicionar um novo shake? Se não quiser, digite 0. Se sim, digite 1");
+            System.out.println("\n\nDeseja adicionar um novo shake? SIM = 1 e NÃO = 2. Digite a sua escolha");
         } while (!(scan.nextInt() <= 0));
         Pedido pedido = new Pedido(++autoincrementPedidoId, itensPedidos, cliente);
         pedidos.add(pedido);
@@ -50,7 +49,7 @@ public class ApplicationImpl implements Application {
     }
 
     private Cliente addCliente(){
-        System.out.println("Digite o seu nome e email: ");
+        System.out.println("Digite o seu Nome e email: ");
         Scanner scan = new Scanner(System.in);
         String nome = scan.nextLine();
         String email = scan.nextLine();
@@ -60,17 +59,17 @@ public class ApplicationImpl implements Application {
     private ItemPedido addItemPedido(){
         Scanner scan = new Scanner(System.in);
         Shake shake = addShake();
-        System.out.println("\nQuantas unidades desse shake?\n");
+        System.out.println("\nQuantos Shakes vocês quer?\n");
         int quantidade = scan.nextInt();
         while (quantidade <= 0){
-            System.out.println("Quantidade deve ser maior que 1m");
+            System.out.println("A quantidade escolhida deve ser 1 ou mais");
             quantidade = scan.nextInt();
         }
         return new ItemPedido(shake, quantidade);
     }
 
     private Shake addShake(){
-        System.out.println("\n\nMonte o seu shake de acordo com o cardápio disponível\n\n");
+        System.out.println("\n\nMonte o seu shake com as seguintes opções do cardápio:\n\n");
         Scanner scan = new Scanner(System.in);
         Base base = escolherBase.get();
         Fruta fruta = escolherFruta.get();
@@ -95,15 +94,15 @@ public class ApplicationImpl implements Application {
 
     private Supplier<String> stringfiedCardapioTopping = () -> "OPÇÕES DE TOPPING: \n" +
             "1 - Aveia - R$ 2.00\n" +
-            "2 - Chocolate - R$ 100.00\n" +
-            "3 - Mel - R$ 1.00\n";
+            "2 - Chocolate - R$ 4.00\n" +
+            "3 - Mel - R$ 3.00\n";
 
     private Supplier<String> stringfiedCardapioAdicionais = () -> "OPÇÕES DE ADICIONAL: \n" +
             "1 - Aveia - R$ 2.00\n" +
-            "2 - Chocolate - R$ 100.00\n" +
-            "3 - Mel - R$ 1.00\n" +
-            "4 - Banana - R$ 1.00\n" +
-            "5 - Morango - R$ 10.00\n";
+            "2 - Chocolate - R$ 4.00\n" +
+            "3 - Mel - R$ 3.00\n" +
+            "4 - Banana - R$ 2.50\n" +
+            "5 - Morango - R$ 4.00\n";
 
     private void initializeOpcoesAdicionaisTable(){
         opcoesAdicionais = new HashMap<>(5);
