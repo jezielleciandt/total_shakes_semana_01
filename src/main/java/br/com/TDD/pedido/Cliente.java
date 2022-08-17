@@ -70,7 +70,6 @@ public class Cliente implements Serializable {
         if (!nome.equals(cliente.nome)) return false;
         return email.equals(cliente.email);
     }
-
     @Override
     public int hashCode() {
         int result = id;

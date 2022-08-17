@@ -50,10 +50,8 @@ public class Cardapio {
         }
         return precos.get(ingrediente);
     }
-
     @Override
     public String toString() {
         return this.precos.toString();
     }
-
 }

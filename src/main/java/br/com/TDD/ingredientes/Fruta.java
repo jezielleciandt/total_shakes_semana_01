@@ -27,7 +27,6 @@ public class Fruta  implements Adicional,Comparable<Ingrediente>{
 
           return tipoFruta == fruta.tipoFruta;
      }
-
      @Override
      public int hashCode() {
           return tipoFruta.hashCode();
