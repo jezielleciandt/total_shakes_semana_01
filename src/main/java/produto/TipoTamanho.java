@@ -42,5 +42,4 @@ public enum TipoTamanho {
         throw new IllegalArgumentException("Tamanho não existe no cardápio.");
     }
 
-
 }
