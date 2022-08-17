@@ -1,6 +1,9 @@
 package ingredientes;
 
-public class Fruta  implements Adicional,Comparable<Ingrediente>{
+import java.io.Serializable;
+
+public class Fruta  implements Adicional,Comparable<Ingrediente>, Serializable {
+     private static final long serialVersionUID = 1L;
      private TipoFruta tipoFruta;
 
      public Fruta(TipoFruta tipoFruta) {
@@ -11,11 +14,9 @@ public class Fruta  implements Adicional,Comparable<Ingrediente>{
           return this.tipoFruta;
      }
 
-
-     //É necessário consertar o compareTo, para imprimir na ordem correta.
      @Override
      public int compareTo(Ingrediente ingrediente) {
-          return ingrediente.obterTipo().toString().compareTo(this.obterTipo().toString());
+          return this.obterTipo().toString().compareTo(ingrediente.obterTipo().toString());
      }
 
      @Override
