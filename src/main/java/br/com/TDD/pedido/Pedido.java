@@ -1,12 +1,13 @@
 package br.com.TDD.pedido;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Pedido{
 
-    private int id;
-    private  ArrayList<ItemPedido> itens;
-    private Cliente cliente;
+    private final int id;
+    private final ArrayList<ItemPedido> itens;
+    private final Cliente cliente;
 
     public Pedido(int id, ArrayList<ItemPedido> itens,Cliente cliente){
         this.id = id;
@@ -28,22 +29,45 @@ public class Pedido{
 
     public double calcularTotal(Cardapio cardapio){
         double total= 0;
-        //TODO
+        for(ItemPedido  pItem : itens){
+            var shake = pItem.getShake();
+            var quantShake = pItem.getQuantidade();
+            var base = shake.getBase();
+            var adicionais = shake.getAdicionais();
+
+            var precoBase = cardapio.getPrecos().get(base);
+            var precoTamanho = precoBase + (precoBase * shake.getTipoTamanho().multiplicador);
+            var precoAdicionais = adicionais.stream().map(adicional -> cardapio.getPrecos().get(adicional)).reduce(0.0, Double::sum);
+
+            total += (precoTamanho + precoAdicionais) * quantShake;
+        }
         return total;
     }
 
     public void adicionarItemPedido(ItemPedido itemPedidoAdicionado){
-        //TODO
+        Optional<ItemPedido> itemPedido = itens.stream().filter(shake ->
+                shake.getShake().equals(itemPedidoAdicionado.getShake())).findFirst();
+        if(itemPedido.isEmpty() == false) {
+            itemPedidoAdicionado.setQuantidade(itemPedidoAdicionado.getQuantidade() + itemPedido.get().getQuantidade());
+        } else {
+            itens.add(itemPedidoAdicionado);
+        }
     }
 
     public boolean removeItemPedido(ItemPedido itemPedidoRemovido) {
-        //substitua o true por uma condição
-        if (true) {
-            //TODO
+
+        if (itens != null) {
+            Optional<ItemPedido> itemPedido = itens.stream().filter(item -> item.getShake().equals(itemPedidoRemovido.getShake())).findAny();
+            if (itemPedido.isPresent()) {
+                itemPedidoRemovido.setQuantidade(itemPedido.get().getQuantidade() - 1);
+                if (itemPedidoRemovido.getQuantidade() == 0) {
+                    itens.remove(itemPedidoRemovido);
+                }
+            }
         } else {
             throw new IllegalArgumentException("Item nao existe no pedido.");
         }
-        return false;
+        return true;
     }
 
     @Override
