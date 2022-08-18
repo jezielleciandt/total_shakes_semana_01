@@ -1,12 +1,12 @@
 package demo;
 
-import ingredientes.*;
-import pedido.Cardapio;
-import pedido.Cliente;
-import pedido.ItemPedido;
-import pedido.Pedido;
-import produto.Shake;
-import produto.TipoTamanho;
+import br.com.TDD.ingredientes.*;
+import br.com.TDD.pedido.Cardapio;
+import br.com.TDD.pedido.Cliente;
+import br.com.TDD.pedido.ItemPedido;
+import br.com.TDD.pedido.Pedido;
+import br.com.TDD.produto.Shake;
+import br.com.TDD.produto.TipoTamanho;
 
 import java.util.ArrayList;
 import java.util.List;

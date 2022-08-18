@@ -1,8 +1,9 @@
-package produto;
+package br.com.TDD.produto;
 
-import ingredientes.*;
+import br.com.TDD.ingredientes.Base;
+import br.com.TDD.ingredientes.Fruta;
+import br.com.TDD.ingredientes.Topping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Shake {

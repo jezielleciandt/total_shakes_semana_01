@@ -1,6 +1,4 @@
-package pedido;
-
-import ingredientes.Ingrediente;
+package br.com.TDD.pedido;
 
 import java.util.TreeMap;
 

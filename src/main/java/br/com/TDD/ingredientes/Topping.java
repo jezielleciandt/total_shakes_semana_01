@@ -1,4 +1,4 @@
-package ingredientes;
+package br.com.TDD.ingredientes;
 
 public class Topping implements Adicional,Comparable<Ingrediente> {
     private TipoTopping tipoTopping;
