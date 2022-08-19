@@ -67,17 +67,6 @@ public class Cardapio {
                 );
     }
 
-    public TreeMap<Adicional, Double> getAdicionais() {
-         TreeMap<Adicional, Double> adicionais = new TreeMap<>();
-
-        this.precos.forEach((ingrediente, preco) -> {
-            if(ingrediente instanceof Adicional){
-                adicionais.put((Adicional) ingrediente, preco);
-            }
-        });
-        return adicionais;
-    }
-
     @Override
     public String toString() {
         return this.precos.toString();

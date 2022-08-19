@@ -10,6 +10,7 @@ import ingredientes.topping.TipoTopping;
 import ingredientes.topping.Topping;
 import pedido.Cardapio;
 import pedido.Cliente;
+import pedido.ItemPedido;
 import produto.Shake;
 import produto.TipoTamanho;
 
@@ -24,6 +25,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+
         Cliente cliente = new Cliente(1,"Pedro","pedro@email.com");
 
         System.out.println("O que deseja? \n[1] Ver cardápio | [2] Montar Pedido | [0] Sair ->");
@@ -41,6 +43,7 @@ public class Main {
             System.out.println("O que deseja? \n[1] Ver cardápio | [2] Montar Pedido | [0] Sair ->");
             opcao = leitor.nextInt();
         }
+
     }
 
     private static void fazerPedido() {
@@ -86,7 +89,7 @@ public class Main {
             while(adicionalOpt != 4){
 
                 if(adicionalOpt == 1){
-                    System.out.println(cardapio.getAdicionais());
+                    System.out.println(cardapio.getPrecoAdicionais());
 
                 }else if(adicionalOpt == 2){
                     System.out.println("Qual tipo do adicional: \n[1] Fruta | [2] Topping");
