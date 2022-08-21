@@ -1,4 +1,4 @@
-package demo;
+package br.com.TDD.demo;
 
 import br.com.TDD.ingredientes.*;
 import br.com.TDD.pedido.Cardapio;

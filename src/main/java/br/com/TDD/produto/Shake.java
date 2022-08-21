@@ -1,5 +1,6 @@
 package br.com.TDD.produto;
 
+import br.com.TDD.ingredientes.Adicional;
 import br.com.TDD.ingredientes.Base;
 import br.com.TDD.ingredientes.Fruta;
 import br.com.TDD.ingredientes.Topping;
@@ -7,34 +8,50 @@ import br.com.TDD.ingredientes.Topping;
 import java.util.List;
 
 public class Shake {
-    private Base base;
-    private Fruta fruta;
-    private Topping topping;
-    private List<Adicional> adicionais;
-    private TipoTamanho  tipoTamanho;
+        private Base base;
+        private Fruta fruta;
+        private Topping topping;
+        private List<Adicional> adicionais;
+        private TipoTamanho  tipoTamanho;
 
-    public Base getBase() {
-        return base;
-    }
+        public Shake(Base base, Fruta fruta, Topping topping, List<Adicional> adicionais, TipoTamanho tipoTamanho){
+            this.base = base;
+            this.fruta = fruta;
+            this.topping = topping;
+            this.adicionais = adicionais;
+            this.tipoTamanho = tipoTamanho;
+        }
 
-    public Fruta getFruta() {
-        return fruta;
-    }
+        public Shake(Base base, Fruta fruta, Topping topping, TipoTamanho tipoTamanho) {
+            this.base = base;
+            this.fruta = fruta;
+            this.topping = topping;
+            this.tipoTamanho = tipoTamanho;
+        }
 
-    public Topping getTopping() {
-        return topping;
-    }
+        public Base getBase() {
+            return base;
+        }
 
-    public List<Adicional> getAdicionais() {
-        return adicionais;
-    }
+        public Fruta getFruta() {
+            return fruta;
+        }
 
-    public TipoTamanho getTipoTamanho() {
-        return tipoTamanho;
-    }
+        public Topping getTopping() {
+            return topping;
+        }
 
-    @Override
-    public String toString() {
-        return this.base.getTipoBase().toString() + " / " + this.fruta.getTipoFruta().toString() + " / " + this.topping.getTipoTopping().toString() + " / " + this.adicionais + " / " + this.tipoTamanho.toString();
+        public List<Adicional> getAdicionais() {
+            return adicionais;
+        }
+
+        public TipoTamanho getTipoTamanho() {
+            return tipoTamanho;
+        }
+
+        @Override
+        public String toString() {
+            return this.base.getTipoBase().toString() + " / " + this.fruta.getTipoFruta().toString() + " / " + this.topping.getTipoTopping().toString() + " / " + this.adicionais + " / " + this.tipoTamanho.toString();
+        }
+
     }
-}
